@@ -1,0 +1,126 @@
+﻿
+<div style="margin-top:80px;"> </div>
+
+@model List<string>
+
+<div>
+    <!--
+        How to Design Image Gallery in ASP.NET CORE MVC | Image Gallery with asp.net Core MVC 7.0
+        -https://www.youtube.com/watch?v=pPOHvrlsFL4
+
+        How to Design Image Gallery in ASP.NET CORE MVC | Image Gallery in aspnet Core | Download and Delete
+        -https://www.youtube.com/watch?v=u_e31WAG_GE
+    -->
+    @* @using (Html.BeginForm("Index", "ImageGallery", FormMethod.Post, new { 
+                 enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <div class="form-group col-md-6">
+                <input type="file" class="form-control" name="file" />
+            </div>
+
+            <div class="form-group col-md-6">
+                <input type="submit" class="btn btn-success" name="submit" value="Upload" />
+            </div>
+        </div>
+    } *@
+</div>
+
+<div class="mb-5 mt-2">
+
+    <div class="card text-center" style="width: 18rem;">
+
+       @*  <form method="post" enctype="multipart/form-data" asp-controller="Img" asp-action="Index"> *@
+
+       <div class="card-header">
+                <h4 class="threeD1">Avatar.</h4>
+       </div>
+
+       <div class="card-body">
+
+                BODY
+
+         <div class="row">
+
+                @if(Model != null && Model.Any())
+                {
+                    @foreach (var imgFileName in Model)
+                    {
+                        <div class="col-xs-3">
+                            @*  <div class="col-md-3"> *@
+                            <div class="alert alert-success">
+                               <img src="~/Images/@imgFileName" class="brdrBtn_E1 mt-2" />
+                               @* <img src="~/Images/@imgFileName" height="100" width="100" />*@
+
+                                <a href="ImageGallery/DownloadImage?imgName=@imgFileName" style="text-decoration:none;">Download</a> |
+
+                                <a href="ImageGallery/DeleteImage?imgName=@imgFileName" style="text-decoration:none;"> Delete</a>
+                              @*<a href="ImageGallery/DeleteImage?imgName=@imgFileName" style="text-decoration:none;">Delete</a> *@
+                            </div>
+                        </div>
+                    }
+
+                    
+                }
+                else
+                {
+                    <div>
+                        Images not available
+                    </div>
+                }
+
+         </div>
+
+               @*  @foreach (var item in Model.Fileimage)
+                {
+                    <div class="col-xs-3">
+                        <span class="tt" data-bs-placement="top" title="Delete picture">
+                            <a href="@Url.Action("Delete", "Img",new {imgdel=@item.Name})">
+                                <img src="~/img/delete32.png" class="dotWhite" style="float: right;" />
+                            </a>
+                        </span>
+                    </div>
+
+              
+                    <div> <img src="~/Images/@item.Name" class="brdrBtn_E1 mt-2" /></div>
+                 
+                } *@
+       </div>
+
+       <div class="card-footer text-center  mb-1">
+                <div class="row text-center">
+
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+
+                    @using (Html.BeginForm("Index", "ImageGallery", FormMethod.Post, new
+                    {
+                        enctype = "multipart/form-data"
+                    }))
+                    {
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <input type="file" class="form-control" name="file" />
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="submit" class="btn btn-success" name="submit" value="Upload" />
+                            </div>
+                        </div>
+                    }
+                       @*  <input type="file" name="imgfile" />
+                        <input type="submit" value="Upload" /> *@
+
+                  </div>
+                </div>
+       </div>
+
+       @*     </form> *@
+    </div>
+</div>
+
+
+@* <div>
+
+
+    <dir></dir>
+</div> *@

@@ -1,0 +1,40 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout) && parentLayout !=  null)
+    {
+        Layout = parentLayout.ToString();
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+<div class="parent" style="margin-top:85px;">
+    <div class="child">  <h1 class="threeD">Manage your account</h1>  </div><br>
+    <div class="child stroke2" style="background-color:transparent; text-align:center;"> <h2>Change your account settings</h2>   </div>
+</div>
+
+
+<div>
+    
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            <partial name="_ManageNav" />
+        </div>
+        <div class="col-md-9">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @RenderSection("Scripts", required: false)
+}
+
+@* <script>
+    //Enable tooltips
+    //-https://getbootstrap.com/docs/5.2/components/tooltips/#examples
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script> *@

@@ -1,0 +1,224 @@
+﻿@model People.Models.MdlPeopleApp
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>MdlPeopleApp</h4>
+<hr />
+<div class="row" style="margin-top:20px;">
+
+
+    @* <div class="col-md-4"> *@
+  <div class="mb-3 mt-3" style="background: #fff;
+                border: 1px solid #ddd;
+                margin: 0 auto;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 16px;
+                -moz-box-shadow: 1px 1px 7px #ccc;
+                -webkit-box-shadow: 1px 1px 7px #ccc;
+                box-shadow: 1px 1px 7px #ccc;
+                width: 100%;  height: auto;
+                padding: 10px;
+                border-radius: 10px;">
+
+    <form asp-action="Edit">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+      <div class="row g-1 mb-1">
+        <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="Genter" class="control-label"></label>
+                <input asp-for="Genter" class="form-control" />
+                <span asp-validation-for="Genter" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+      </div>
+
+      <div class="row g-1 mb-1">
+        <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="StNumber" class="control-label"></label>
+                <input asp-for="StNumber" class="form-control" />
+                <span asp-validation-for="StNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="StName" class="control-label"></label>
+                <input asp-for="StName" class="form-control" />
+                <span asp-validation-for="StName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="StCity" class="control-label"></label>
+                <input asp-for="StCity" class="form-control" />
+                <span asp-validation-for="StCity" class="text-danger"></span>
+            </div>
+        </div>
+      </div>
+
+      <div class="row g-1 mb-1">
+         <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="StState" class="control-label"></label>
+                <input asp-for="StState" class="form-control" />
+                <span asp-validation-for="StState" class="text-danger"></span>
+            </div>
+         </div>
+         <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="StZip" class="control-label"></label>
+                <input asp-for="StZip" class="form-control" />
+                <span asp-validation-for="StZip" class="text-danger"></span>
+            </div>
+         </div>
+         <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="AddressLine" class="control-label"></label>
+                <input asp-for="AddressLine" class="form-control" />
+                <span asp-validation-for="AddressLine" class="text-danger"></span>
+            </div>
+         </div>
+         <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="JobTitle" class="control-label"></label>
+                <input asp-for="JobTitle" class="form-control" />
+                <span asp-validation-for="JobTitle" class="text-danger"></span>
+            </div>
+         </div>
+       </div>
+
+      <div class="row g-1 mb-1">
+         <div class="col mt-1 mb-2">
+            <div class="form-group">
+                 <label asp-for="Avatar" class="control-label"></label>
+                 <input asp-for="Avatar" class="form-control" />
+                 <span asp-validation-for="Avatar" class="text-danger"></span>
+            </div>
+         </div>
+                  
+
+        <div class="col mt-1 mb-2">
+           <div class="form-group">
+               <label asp-for="Race" class="control-label"></label>
+               <input asp-for="Race" class="form-control" />
+               <span asp-validation-for="Race" class="text-danger"></span>
+           </div>
+        </div>
+
+
+         <div class="col mt-1 mb-2">
+             <div class="form-group">
+                  <label asp-for="UserIn" class="control-label"></label>
+                  <input asp-for="UserIn" class="form-control" />
+                  <span asp-validation-for="UserIn" class="text-danger"></span>
+            </div>
+         </div>
+         <div class="col mt-1 mb-2">
+            <div class="form-group">
+              <label asp-for="Dated" class="control-label"></label>
+                <input asp-for="Dated" class="form-control" />
+                <span asp-validation-for="Dated" class="text-danger"></span>
+            </div>
+         </div>
+      </div>
+
+      <div class="row g-1 mb-1">
+         <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+         </div>
+         <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="RecCount" class="control-label"></label>
+                <input asp-for="RecCount" class="form-control" />
+                <span asp-validation-for="RecCount" class="text-danger"></span>
+            </div>
+         </div>
+         <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+         </div>
+         @* <div class="col mt-1 mb-2">
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+         </div> *@
+      </div>
+
+      <div class="container AllSidesShadowFtr change_linkA">
+         <div class="row gx-4 mt-1 mb-2" style="text-align:center;">
+           <div class="btn-group-sm" role="group" aria-label="Basic mixed styles example">
+
+                 <span class="tt" data-bs-placement="top" title="Save changes">
+                     <button type="submit" class="btn btn-success">Save</button>
+                 </span>
+
+                  <span class="tt" data-bs-placement="top" title="Go Back to list">
+                     <a type="button" class="btn btn-warning" asp-action="Index">List</a>
+                  </span>
+
+                  <span class="tt" data-bs-placement="top" title="Go home">
+                      <button type="button" class="btn btn-danger" onclick="javascript:GoToHomePage()">Cancel</button>
+                  </span>
+
+           </div>
+         </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

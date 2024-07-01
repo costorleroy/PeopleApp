@@ -1,0 +1,511 @@
+﻿@model People.Models.MdlPeopleApp
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* <h1>Create</h1>
+
+<h4>MdlPeopleApp</h4>
+<hr /> *@
+<div style="margin-top:80px;"></div>
+<h4>New People</h4>
+
+<!--
+<div class="text-center" style="margin-top:80px;">
+
+     <h1 class="display-4 threeD1 ltrSpc15" style="background-color:transparent;">PEOPLE</h1> 
+    <p class="text-decoration-none">
+        <a href="#">Fifth</a> & <a href="#">Sixth</a> Floor
+    </p>
+</div>
+-->
+
+<div class="row" style="margin-top:20px;">
+
+    <div class="mb-3 mt-3" style="background: #fff;
+                border: 1px solid #ddd;
+                margin: 0 auto;
+                margin-left: auto;
+                margin-right: auto;
+                font-size: 16px;
+                -moz-box-shadow: 1px 1px 7px #ccc;
+                -webkit-box-shadow: 1px 1px 7px #ccc;
+                box-shadow: 1px 1px 7px #ccc;
+                width: 100%;  height: auto;
+                padding: 10px;
+                border-radius: 10px;">
+
+        <form enctype="multipart/form-data" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row g-1 mb-1">
+                <div class="col">
+                    <div class="form-group">
+                        @*<label class="control-label form-label fw-bold">Floor</label>
+                         <select asp-for="seleFloor" asp-items="ViewBag.seleFloor"></select> *@
+                        <label asp-for="selFloor" class="control-label"></label>
+                        <select asp-for="selFloor" class="form-select" aria-label="Default select example">
+                            <option selected>Select Floor</option>
+                            <option value="fl5">5 Th. Floor</option>
+                            <option value="fl6">6 Th. Floor</option>
+                            @* <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option> *@
+                        </select>
+                        @* <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control" maxlength="20"
+                               onkeypress="return ValidAlphabet()" style="text-transform: capitalize;" />
+                        <span asp-validation-for="FirstName" class="text-danger"></span> *@
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="FirstName" class="control-label"></label>
+                        <input asp-for="FirstName" class="form-control" maxlength="20"
+                               onkeypress="return allowOnlyLetters(event,this);" style="text-transform: capitalize;" />
+                               @* onkeypress="return ValidAlphabet()" style="text-transform: capitalize;" /> *@
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="LastName" class="control-label"></label>
+                        <input asp-for="LastName" class="form-control" maxlength="20"
+                               onkeypress="return ValidAlphabet()" style="text-transform: capitalize;" />
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <label asp-for="Genter" class="control-label mb-2" style="text-align:center;"></label>
+                    <div class="form-group" style="text-align:center;">
+                         
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Mail</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Femail</label>
+                        </div>
+                        @*<input asp-for="Genter" class="form-control" 
+                               onkeypress="return ValidAlphabet()" style="text-transform: capitalize;" />
+                        <span asp-validation-for="Genter" class="text-danger"></span> *@
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-1 mb-1">
+                <div class="col">
+                   @*  <input type="text" class="form-control" placeholder="First name" aria-label="First name"> *@
+                    <div class="form-group">
+                        <label asp-for="Phone" class="control-label"></label>
+                        <input asp-for="Phone" class="form-control" placeholder="(999) 999-9999" id="phoneNumber" onkeypress="return numberPressed(event);" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="StNumber" class="control-label"></label>
+                        <input asp-for="StNumber" class="form-control" />
+                        <span asp-validation-for="StNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="StName" class="control-label"></label>
+                        <input asp-for="StName" class="form-control"/>
+                        <span asp-validation-for="StName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="StCity" class="control-label"></label>
+                        <input asp-for="StCity" class="form-control" style="text-transform: capitalize;" />
+                        <span asp-validation-for="StCity" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-1 mb-1">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="StState" class="control-label"></label>
+                        <input asp-for="StState" class="form-control" maxlength="2" style="text-transform: uppercase;" onkeypress="return ValidAlphabet()" />
+                        <span asp-validation-for="StState" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="StZip" class="control-label"></label>
+                        <input asp-for="StZip" class="form-control" maxlength="5" onkeypress="return OnlyNumbers(event);"/>
+                        <span asp-validation-for="StZip" class="text-danger"></span>
+                        @* <input asp-for="StZip" class="form-control" maxlength="5" onkeypress="return onlyNumberKey(event)" /> *@
+                        @*<input asp-for="StZip" class="form-control" maxlength="5" onkeypress="return IsNumeric(event);" ondrop="return false;" onpaste="return false;" /> *@
+                        @* <span id="error" style="color: Red; display: none">* Input digits (0 - 9)</span> *@
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="AddressLine" class="control-label"></label>
+                        <input asp-for="AddressLine" class="form-control" onkeypress="return ValidAlphabet()" />
+                        <span asp-validation-for="AddressLine" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="JobTitle" class="control-label"></label>
+                        <input asp-for="JobTitle" class="form-control" style="text-transform: capitalize;" onkeypress="return ValidAlphabet()" />
+                        <span asp-validation-for="JobTitle" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+         <div class="container text-center">
+           <div class="row g-1">
+            <!--
+             <div class="col-4 ">
+                  <div class="card text-center">
+                     <div class="card-header">
+                        AVATAR
+                     </div>
+
+                   <div class="card-body">
+                     <img src="~/images/a99b01c8-d174-4d2c-a2fe-1ef0225207cc.jpg" alt="Photo" class="imgRound" style="width:86px;" />
+                     @* <img src="~/images/a99b01c8-d174-4d2c-a2fe-1ef0225207cc.jpg" alt="Photo" class="brdrBtn_E1" style="height:85px; width:80px;"/> *@
+                   </div>
+
+                   <div class="card-footer text-muted">
+                    Update
+                   </div>
+                 </div>
+             </div>
+            -->
+
+             <div class="col-5 form-group">
+                <div class="card text-center">
+                   <div class="card-header">
+                                AVATAR
+                    </div>
+
+                   <div class="card-body">
+                     <img src="~/images/a99b01c8-d174-4d2c-a2fe-1ef0225207cc.jpg" alt="Photo" class="imgRound" style="width:86px;" />
+                    @* <img src="~/images/a99b01c8-d174-4d2c-a2fe-1ef0225207cc.jpg" alt="Photo" class="brdrBtn_E1" style="height:85px; width:80px;"/> *@
+                   </div>
+
+                   <div class="card-footer text-muted" style="text-align:left;">
+                      <div class="input-group mb-1">
+                          <input type="file" class="form-control" id="inputGroupFile02">
+                          <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                      </div>
+                       @* <div class="custom-file">
+                         <input asp-for="CoverPhoto" class="custom-file-input" id="customFile"/>
+                          <label class="custom-file-label" for="customFile"></label>
+                       </div> *@
+                     <span asp-validation-for="CoverPhoto" class="text-danger"></span>
+                   </div>
+                </div>
+             </div>
+
+             <div class="col-7">
+                <div class="card text-center">
+                    <div class="card-header">
+                                COMMENTS
+                     </div>
+
+                    <div class="card-body">
+
+                       <div class="form-group mb-2" style="text-align: center;">
+                         @*  <label asp-for="CompanyName" class="control-label"></label> *@
+                         <textarea name="CompanyName" rows="3" cols="4" id="word" oninput="countWord()"
+                              class="form-control">
+                         </textarea>
+                          @* <input asp-for="CompanyName" class="form-control" /> *@
+                          <span asp-validation-for="CompanyName" class="text-danger"></span>
+                       </div>
+                       
+                    </div>
+
+                   <div class="card-footer text-muted">
+                      Word Count: <span id="show">0</span>
+                   </div>
+                </div>
+             </div>
+
+           </div>
+         </div>
+           @*  <div class="form-group row">
+                <label asp-for="Avatar" class="col-sm-2 col-form-label"></label>
+
+                <div class="col-sm-10">
+                  <div class="custom-file">
+                    <input asp-for="Avatar" class="form-control custom-file-input" />
+                    <label class="custom-file-label">Choose File...</label>
+                  </div>
+                </div>
+            </div> *@
+          <!--  
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Avatar" class="control-label"></label>
+                        <input asp-for="Avatar" class="form-control" />
+                        <span asp-validation-for="Avatar" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+          -->
+
+            <div class="row  g-1 mb-1">
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Race" class="control-label"></label>
+                        <input asp-for="Race" class="form-control" />
+                        <span asp-validation-for="Race" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                    <label asp-for="UserId" class="control-label"></label>
+                        <input asp-for="UserId" class="form-control" maxlength="6" onkeypress="return OnlyNumbers(event);" />
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                    </div>
+                   @*  <div class="form-group">
+                        <label asp-for="Dated" class="control-label"></label>
+                        <input asp-for="Dated" class="form-control" />
+                        <span asp-validation-for="Dated" class="text-danger"></span>
+                    </div> *@
+                </div>
+
+                <div class="col">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="UserIn" class="control-label"></label>
+                            <input asp-for="UserIn" class="form-control" />
+                            <span asp-validation-for="UserIn" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="RecCount" class="control-label">Record No.</label>
+                        <input asp-for="RecCount" class="form-control" />
+                        <span asp-validation-for="RecCount" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="Dated" class="control-label">Created</label>
+                        <input asp-for="Dated" class="form-control" id="todayIs" />
+                        <span asp-validation-for="Dated" class="text-danger"></span>
+                    </div>
+                    
+                </div>
+
+                @* <div class="col">
+                    <div class="form-group">
+                        <label asp-for="CompanyName" class="control-label"></label>
+                        <input asp-for="CompanyName" class="form-control" />
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                    </div>
+                </div> *@
+            </div>
+
+            @*<div class="row g-1 mb-1">
+                 <div class="col">
+                    <div class="col">
+                        <div class="form-group">
+                            <label asp-for="UserIn" class="control-label"></label>
+                            <input asp-for="UserIn" class="form-control" />
+                            <span asp-validation-for="UserIn" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="RecCount" class="control-label"></label>
+                        <input asp-for="RecCount" class="form-control" />
+                        <span asp-validation-for="RecCount" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="form-group">
+                        <label asp-for="UserId" class="control-label"></label>
+                        <input asp-for="UserId" class="form-control" />
+                        <span asp-validation-for="UserId" class="text-danger"></span>
+                    </div>
+                </div> 
+            </div>*@
+
+          <div class="brdrBtn_E mt-3 mb-3">
+
+            <div class="card-footer text-center">
+              <div class="row text-center">
+
+               <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+
+                 <div class="form-group mt-2 mb-2 col text-center">
+                      <input type="submit" value="Create" class="btn btn-success btn-group-sm" />
+                 </div>
+
+                 <div class="col text-center mt-2 mb-2">
+                      <button id="btnClear" type="button" class="btn btn-danger btn-group-sm" onclick="javascript:GoToHomePage()">Cancel </button>
+                 </div>
+                </div>
+                </div>
+            </div>
+          </div>
+          
+            
+            @* <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div> *@
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    
+    <script>
+        function countWord() {
+            // Get the input text value
+            let words = document.getElementById("word").value;
+            // Initialize the word counter
+            let count = 0;
+            // Split the words on each
+            // space character
+            let split = words.split(' ');
+            // Loop through the words and
+            // increase the counter when
+            // each split word is not empty
+            for (let i = 0; i < split.length; i++) {
+                if (split[i] != "") {
+                    count += 1;
+                }
+            }
+            // Display it as output
+            document.getElementById("show").innerHTML = count;
+        }
+
+        
+        //-------------------------------------------------
+        //<input type="text" onkeypress="return allowOnlyLetters(event,this);" />
+       
+        function allowOnlyLetters(e, t) {
+            if (window.event) {
+                var charCode = window.event.keyCode;
+            }
+            else if (e) {
+                var charCode = e.which;
+            }
+            else { return true; }
+            if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123))
+                return true;
+            else {
+                alert("Please enter alphabetic letters only");
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        function ValidAlphabet() {
+            var code = (event.which) ? event.which : event.keyCode;
+            if ((code >= 65 && code <= 90) ||
+                (code >= 97 && code <= 122) || (code == 32)) {
+                return true;
+            }
+            else {
+                alert("Enter letters only.");
+                return false;
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        /*code: 48-57 Numbers*/
+        function OnlyNumbers(e) { 
+            var x = e.which || e.keycode;
+            if ((x >= 48 && x <= 57))
+                return true;
+            else
+                alert("Please enter numbers only");
+                return false;
+        }
+    </script>
+    <script>
+        /* -htpps://jsfiddle.net/rm9vg16m/
+           -https://jsfiddle.net/rm9vg16m/
+           Enter a phone number here: <input type="text" id="phoneNumber"  onkeypress="return numberPressed(event);"/>
+        */
+
+        // Format the phone number as the user types it
+        document.getElementById('phoneNumber').addEventListener('keyup', function (evt) {
+            var phoneNumber = document.getElementById('phoneNumber');
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            phoneNumber.value = phoneFormat(phoneNumber.value);
+        });
+
+        // We need to manually format the phone number on page load
+        document.getElementById('phoneNumber').value = phoneFormat(document.getElementById('phoneNumber').value);
+
+        // A function to determine if the pressed key is an integer
+        function numberPressed(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)) {
+                return false;
+            }
+            return true;
+        }
+
+        // A function to format text to look like a phone number
+        function phoneFormat(input) {
+            // Strip all characters from the input except digits
+            input = input.replace(/\D/g, '');
+
+            // Trim the remaining input to ten characters, to preserve phone number format
+            input = input.substring(0, 10);
+
+            // Based upon the length of the string, we add formatting as necessary
+            var size = input.length;
+            if (size == 0) {
+                input = input;
+            } else if (size < 4) {
+                input = '(' + input;
+            } else if (size < 7) {
+                input = '(' + input.substring(0, 3) + ') ' + input.substring(3, 6);
+            } else {
+                input = '(' + input.substring(0, 3) + ') ' + input.substring(3, 6) + '-' + input.substring(6, 10);
+            }
+            return input;
+        }
+    </script>
+
+    <script>
+      // MVC Razor - Default Value as Current date for textbox type date
+      //-https://stackoverflow.com/questions/26418120/mvc-razor-default-value-as-current-date-for-textbox-type-date
+      window.onload = function () {
+         var date = new Date();
+
+         var Mes = String(date.getMonth() + 1).padStart(2, '0');
+         var Dia = String(date.getDate()).padStart(2, '0');
+         var Anio = date.getFullYear();
+         document.getElementById("todayIs").value = Anio + "-" + Mes + "-" + Dia;
+      };
+    </script>
+}

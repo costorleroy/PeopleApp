@@ -1,0 +1,1329 @@
+﻿
+/*             STYLE 01/28/2024 @10:42             */
+/*             3D Text
+  -http://cssdemos.tupence.co.uk/text-shadow.htm
+*/
+
+body {
+    margin-bottom:60px;
+    /*background-image: url("paper.gif");*/
+    background-color: #cccccc;
+    background-image: url('../img/bkgrnd/bg.gif');
+    background-image: url('../img/bkgrnd/line.png');
+    background-image: url('../img/bkgrnd/lines.png'); /* Brighrer of line*/
+    background-image: url('../img/bkgrnd/lines_dark.png'); /* Darker of line*/
+    background-image: url('../img/bkgrnd/stripe.gif'); /* Darkest of line*/
+    background-image: url('../img/bkgrnd/stripe_light.gif'); /* Brightest of line*/
+
+    /*LC*/
+    background-color:white;
+    height:100%;
+    background:#f4f4f4 url(../img/bg.gif) repeat top left;
+}
+/*
+    The most common and traditional way (inline-block)
+    3 ways to display two divs side by side
+    -https://dev.to/dawnind/3-ways-to-display-two-divs-side-by-side-3d8b
+
+    USE:<div class='parent'>
+          <div class='child'>child 1</div>
+          <div class='child'>child 2</div>
+        </div>
+*/
+.parent {
+    /*border: 1px solid black;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;*/
+    text-align:center;
+    padding-bottom:10px;
+}
+
+.child {
+    display: inline-block;
+    vertical-align: middle;
+    /*display: inline-block;
+    border: 1px solid red;
+    padding: 1rem 1rem;
+    vertical-align: middle;*/
+}
+
+.threeD {
+    background: #fff; /*#ca4b29*/
+    background-color: transparent;
+    font-family: 'Chewy', cursive; /*Chewy is available at Google Webfonts 
+                                    -http://www.google.com/webfonts/specimen/Chewy*/
+    color: #fff;
+    /*apply shadows of increasing darkness (in this case, because the text is white, 
+        I started with very pale grey) and offset until you get the effect you desire*/
+    text-shadow: 0px 0px 0 rgb(218,218,218), -1px 0px 0 rgb(203,203,203), -2px 0px 0 rgb(187,187,187), -3px 0px 0 rgb(172,172,172), -4px 0px 0 rgb(156,156,156), -5px 0px 0 rgb(140,140,140), -6px 0px 5px rgba(0,0,0,0.5), -6px 0px 1px rgba(0,0,0,0.5);
+}
+.threeD1 {
+    background-color: white; /*background: #ca4b29;*/
+    background-color:transparent; 
+    font-family: 'Chewy', cursive; /*Chewy is available at Google Webfonts 
+                                    -http://www.google.com/webfonts/specimen/Chewy*/
+    color:black; /*color: #fff;*/
+    /*apply shadows of increasing darkness (in this case, because the text is white, 
+        I started with very pale grey) and offset until you get the effect you desire*/
+    text-shadow: 0px 0px 0 rgb(218,218,218), -1px 0px 0 rgb(203,203,203), -2px 0px 0 rgb(187,187,187), -3px 0px 0 rgb(172,172,172), -4px 0px 0 rgb(156,156,156), -5px 0px 0 rgb(140,140,140), -6px 0px 5px rgba(0,0,0,0.5), -6px 0px 1px rgba(0,0,0,0.5);
+}
+.threeD2 {
+    color:#ccc; 
+    font-size:36px;
+    padding: 20px;
+    font-family: hanzel extended, Verdana, Geneva, sans-serif;
+    font-size: 40px;
+    color: #F00;
+    text-shadow: 0px 0px 0 rgb(218,218,218), -1px 0px 0 rgb(203,203,203), -2px 0px 0 rgb(187,187,187), -3px 0px 0 rgb(172,172,172), -4px 0px 0 rgb(156,156,156), -5px 0px 0 rgb(140,140,140), -6px 0px 5px rgba(10,10,10,10.5), -6px 0px 1px rgba(10,10,10,10.5);
+  
+}
+
+
+
+
+/*     Custom Scrollbar  
+    -https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar2
+    -https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp
+*/
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #b30000;
+    }
+
+/*  CSS letter-spacing Property
+    -https://www.w3schools.com/cssref/tryit.php?filename=trycss_letter-spacing
+*/
+.ltrSpc3 {
+    letter-spacing: 3px;
+}
+
+.ltrSpc5 {
+    letter-spacing: 5px;
+}
+
+.ltrSpc10 {
+    letter-spacing: 10px;
+}
+.ltrSpc15 {
+    letter-spacing: 15px;
+}
+.ltrSpc20 {
+    letter-spacing: 15px;
+}
+/* CSS word-spacing Property
+   -https://www.w3schools.com/cssref/tryit.php?filename=trycss_text_word-spacing
+   -https://www.w3schools.com/cssref/pr_text_word-spacing.php
+*/
+.wrdSpc10 {
+    word-spacing: 10px;
+}
+
+.wrdSpc15 {
+    word-spacing: 15px;
+}
+.wrdSpc20 {
+    word-spacing: 20px;
+}
+.wrdSpc30 {
+    word-spacing: 30px;
+}
+.wrdSpc1cm {
+    word-spacing: 1cm;
+}
+
+/*         Basic Button   
+    -http://cssdemos.tupence.co.uk/button-styling.htm
+    <input class="gobtn"/id="gobtn" type="submit" value="Go!" /> 
+    <!--the text in the quotes after value will appear on the button-->
+*/
+.gobtn {
+    cursor: pointer; /*forces the cursor to change to a hand when the button is hovered*/
+    padding: 5px 25px; /*add some padding to the inside of the button*/
+    background: #35b128; /*the colour of the button*/
+    border: 1px solid #33842a; /*required or the default border for the browser will appear*/
+    /*give the button curved corners, alter the size as required*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    /*give the button a drop shadow*/
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0, .75);
+    -moz-box-shadow: 0 0 4px rgba(0,0,0, .75);
+    box-shadow: 0 0 4px rgba(0,0,0, .75);
+    /*style the text*/
+    color: #f3f3f3;
+    font-size: 1.1em;
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+ .gobtn:hover, input#gobutton:focus {
+        background-color: #399630; /*make the background a little darker*/
+        /*reduce the drop shadow size to give a pushed button effect*/
+        -webkit-box-shadow: 0 0 1px rgba(0,0,0, .75);
+        -moz-box-shadow: 0 0 1px rgba(0,0,0, .75);
+        box-shadow: 0 0 1px rgba(0,0,0, .75);
+ }
+.bigbtn {
+    width: 500px;
+    background: #3e9cbf; /*the colour of the button*/
+    padding: 8px 14px 10px; /*apply some padding inside the button*/
+    border: 1px solid #3e9cbf; /*required or the default border for the browser will appear*/
+    cursor: pointer; /*forces the cursor to change to a hand when the button is hovered*/
+    /*style the text*/
+    font-size: 1.5em;
+    font-family: Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
+    letter-spacing: .1em;
+    text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+    color: #fff;
+    /*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
+    -webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+    -moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+    box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+    /*give the corners a small curve*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.bigbtn:hover, .bigbtn:focus {
+        color: #dfe7ea;
+        /*reduce the size of the shadow to give a pushed effect*/
+        -webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+        -moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+        box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+}
+
+.submitbtn1 {
+    border: 2px groove #7c93ba;
+    cursor: pointer; /*forces the cursor to change to a hand when the button is hovered*/
+    padding: 5px 25px;
+    /*give the background a gradient - see cssdemos.tupence.co.uk/gradients.htm for more info*/
+    background-color: #6b6dbb; /*required for browsers that don't support gradients*/
+    background: -webkit-gradient(linear, left top, left bottom, from(#88add7), to(#6b6dbb));
+    background: -webkit-linear-gradient(top, #88add7, #6b6dbb);
+    background: -moz-linear-gradient(top, #88add7, #6b6dbb);
+    background: -o-linear-gradient(top, #88add7, #6b6dbb);
+    background: linear-gradient(top, #88add7, #6b6dbb);
+    /*style to the text inside the button*/
+    font-family: Andika, Arial, sans-serif; /*Andkia is available at http://www.google.com/webfonts/specimen/Andika*/
+    color: #fff;
+    font-size: 1.1em;
+    letter-spacing: .1em;
+    font-variant: small-caps;
+    /*give the corners a small curve*/
+    -webkit-border-radius: 0 15px 15px 0;
+    -moz-border-radius: 0 15px 15px 0;
+    border-radius: 0 15px 15px 0;
+    /*add a drop shadow to the button*/
+    -webkit-box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
+    -moz-box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
+    box-shadow: rgba(0, 0, 0, .75) 0 2px 6px;
+}
+/***NOW STYLE THE BUTTON'S HOVER AND FOCUS STATES***/
+.submitbtn1:hover, .submitbtn1:focus {
+    color: #edebda;
+     /*reduce the spread of the shadow to give a pushed effect*/
+    -webkit-box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
+    -moz-box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
+    box-shadow: rgba(0, 0, 0, .25) 0 1px 0px;
+}
+
+.submitbtn {
+    padding: 4px 20px;
+    /*give the background a gradient*/
+    background: #ffae00; /*fallback for browsers that don't support gradients*/
+    background: -webkit-linear-gradient(top, #ffae00, #d67600);
+    background: -moz-linear-gradient(top, #ffae00, #d67600);
+    background: -o-linear-gradient(top, #ffae00, #d67600);
+    background: linear-gradient(top, #ffae00, #d67600);
+    border: 2px outset #dad9d8;
+    /*style the text*/
+    font-family: Andika, Arial, sans-serif; /*Andkia is available at http://www.google.com/webfonts/specimen/Andika*/
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0px 1px 10px #000;
+    /*add to small curve to the corners of the button*/
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    /*give the button a drop shadow*/
+    -webkit-box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+    -moz-box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+    box-shadow: rgba(0, 0, 0, .55) 0 1px 6px;
+}
+.submitbtn:hover, .submitbtn:focus {
+   border: 2px solid #dad9d8;
+}
+/*          Round Button
+    -http://cssdemos.tupence.co.uk/button-styling.htm
+    <input id="round" type="submit" value="Push!" />
+*/
+.roundbtn {
+    width: 100px; /*same as the height*/
+    height: 100px; /*same as the width*/
+    background-color: #ff0000;
+    border: 1px solid #ff0000; /*same colour as the background*/
+    color: #fff;
+    font-size: 1.6em;
+    /*set the border-radius at half the size of the width and height*/
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    /*give the button a small drop shadow*/
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
+    box-shadow: 2px 2px 15px rgba(0,0,0, .75);
+}
+    /***NOW STYLE THE BUTTON'S HOVER STATE***/
+.roundbtn:hover {
+    background: #c20b0b;
+    border: 1px solid #c20b0b;
+        /*reduce the size of the shadow to give a pushed effect*/
+    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+    box-shadow: 0px 0px 5px rgba(0,0,0, .75);
+ }
+
+/*
+    Only works in Webkit browsers. In Opera, Firefox and IE you'll just see solid red text
+*/
+.webkit-stroke {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #dd0303;
+    color: #dd0303; /*non-webkit browsers will simply show red text*/
+    -webkit-text-fill-color: #fff; /*will override the text color in webkit browsers*/
+}
+
+/*Stroke/Outline Effect*/
+.stroke {
+    background: #fff; /*same as the text colour*/
+    color: #fff; /*same as the background colour*/
+    /*Use multiple shadows, all the same colour with no x or y offset and 1px blur*/
+    text-shadow: 0 0 1px #dd0303, 0 0 1px #dd0303, 0 0 1px #dd0303, 0 0 1px #dd0303, 0 0 1px #dd0303, 0 0 1px #dd0303;
+}
+.stroke2 {
+    background: #fff; /*same as the text colour*/
+    color: #fff; /*same as the background colour*/
+    /*Again use multiple shadows, all the same colour with no x or y offset and 1px blur, but this time add an additional shadow with a slight offset and a blur in a dark grey colour*/
+    text-shadow: 0 0 1px #dd0303, 0 0 1px #dd0303, 0 0 1px #dd0303, 0 0 1px #dd0303, 0 0 1px #dd0303, 0 0 1px #dd0303, 0 2px 5px #7d7d7d;
+}
+
+/*   Subtle Glow */
+.subtleglow {
+    color: #fff;
+    /*use two shadows, the first the same colour as the text, 
+        the second a darker colour (in this case white and yellow). 
+        Both have no x or y offset, the blur you apply to the shadow 
+        will determine how big the glow effect is*/
+    text-shadow: 0 0 30px #fff, 0 0 70px #ffff00;
+}
+
+/*    Neon Glow  */
+.neon {
+    background: #000;
+    color: #fff;
+    /*Use shadows to slowly build up the glow. The first shadow should 
+        be the colour of the text. Subsequent shadows are the colour you 
+        want the glow to be, all with no x or y offset and with increasing 
+        amounts of blur (the number of shadows you use depends on how big you 
+        want the glow to be).*/
+    text-shadow: 0 0 10px #fff, 0 0 20px #00d2ff, 0 0 30px #00d2ff, 0 0 40px #00d2ff, 0 0 50px #00d2ff, 0 0 60px #00d2ff, 0 0 70px #00d2ff;
+}
+
+/*    Offset Shadow  
+    Use two text shadows to give an offset effect. 
+    The first shadow should be the same colour as the container background, the second the
+*/
+.offset {
+    background: #e4e4c7;
+    padding: 10px 10px 20px 10px; /*leave enough padding to accommodate the shadow*/
+    font-size: 4.2em;
+    letter-spacing: .2em;
+    font-weight: bold;
+    color: #526972;
+    /*use two shadows, the first the colour of the background, the second the same colour as the text*/
+    text-shadow: 4px 4px 0px #e4e4c7, 6px 6px 0px #526972;
+}
+
+.letterpress {
+    color: #222;
+    background: #414141;
+    font-size: 3.2em;
+    text-shadow: 0px 2px 1px #555;
+}
+
+/*   Raised & Letterpress Effect  */
+.raised {
+    color: #fff;
+    background: #666;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-shadow: 0px 1px 1px #000;
+}
+
+/*    Embossed Text
+    Use text shadows to create an embossed effect
+*/
+.emboss3 {
+    background: #6d6d6d; /*same as font colour*/
+    font-family: 'Atomic Age', cursive; /*Atomic Age is from Google Fonts http://www.google.com/webfonts/specimen/Atomic+Age*/
+    color: #6d6d6d; /*same as background colour*/
+    font-size: 4em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #fff, -1px -1px #3d3d3d;
+    /*two shadows, one in white offset to the right and bottom, the second in a dark grey offset to the left and top - you should however adjust the colour depending on the background and font colour*/
+}
+.emboss1 {
+    background: #57758a;
+    font-size: 1.4em;
+    color: #fff;
+    text-shadow: 0px -1px 0px #303030;
+}
+.emboss2 {
+    background: #b8b8b8;
+    font-size: 1.4em;
+    color: #2e2e2e;
+    text-shadow: 0px 1px 0px #ebebeb;
+}
+
+/*   tooltip text and add basic styling to the link */
+/*a.tooltip {
+    position: relative;
+}
+
+    a.tooltip:hover {
+        text-decoration: none;
+    } 
+
+    a.tooltip:after {
+        content: attr(tip);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 90%;
+        line-height: 1.2em;
+        color: #fff;
+        width: 200px;
+        padding: 5px 10px;
+        -moz-border-radius: 6px;
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        background: #c00d3f;
+        background: -webkit-linear-gradient(#c00d3f, #7b0a2a);
+        background: -moz-linear-gradient(#c00d3f, #7b0a2a);
+        background: -o-linear-gradient(#c00d3f, #7b0a2a);*/
+        /*background: -ms-linear-gradient(#c00d3f, #7b0a2a);*/
+        /*background: linear-gradient(#c00d3f, #7b0a2a);
+        -moz-box-shadow: 3px 3px 4px rgba(0,0,0, .65);
+        -webkit-box-shadow: 3px 3px 4px rgba(0,0,0, .65);
+        box-shadow: 3px 3px 4px rgba(0,0,0, .65);
+        position: absolute;
+        top: 27px;
+        left: -10px;
+        display: none;
+    }
+
+ a.tooltip:before {
+    z-index: 1000;
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 0px;
+    border-right: 7px transparent solid;
+    border-left: 7px transparent solid;
+    display: none;
+}
+
+ a.tooltip:hover {
+   z-index: 1000;
+   position: relative;
+   color: #8325f7;
+ }
+
+ a.tooltip:hover:after {
+    display: block;
+ }
+
+a.tooltip:hover:before {
+    display: block;
+}*/
+
+/* 
+    In this example box01 and box02 have absolute positioning applied
+    -http://cssdemos.tupence.co.uk/position-relative-absolute.htm
+*/
+.box01 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box02 {
+    position: absolute;
+    top: 0;
+    left: 420px;
+}
+/*but the parent box has no positioning specified*/
+.mainbox {
+    width: 500px;
+    background: #e7e1aa;
+}
+/*==============================================================================*/
+/*
+    This time the parent box has relative position applied
+*/
+.mainbox1 {
+    position: relative;
+    width: 500px;
+    background: #e7e1aa;
+}
+/*while box01 and box02 are positioned exactly the same as the example above*/
+.box1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.box2 {
+    position: absolute;
+    top: 0;
+    left: 420px;
+}
+/*styling the links to change from one form to another */
+
+p.change_link {
+    position: absolute;
+    color: rgb(127, 124, 124);
+    left: 0px;
+    height: 20px;
+    width: 440px;
+    padding: 17px 30px 20px 30px;
+    font-size: 16px;
+    text-align: right;
+    border-top: 1px solid rgb(219, 229, 232);
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    background: rgb(225, 234, 235);
+    background: -moz-repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+    background: -webkit-repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+    background: -o-repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+    background: repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+}
+.change_link {
+    position: absolute;
+    color: rgb(127, 124, 124);
+    left: 0px;
+    height: 20px;
+    width:100%;    /*width: 440px;*/
+    padding: 17px 30px 20px 30px;
+    font-size: 16px;
+    text-align: right;
+    border-top: 1px solid rgb(219, 229, 232);
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    background: rgb(225, 234, 235);
+    background: -moz-repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+    background: -webkit-repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+    background: -o-repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+    background: repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+}
+.change_linkA {
+    /*position: absolute;*/
+    color: rgb(127, 124, 124);
+    /*left: 0px;*/
+    /*height: 20px;    width: 100%;width: 440px;*/
+    /*padding: 17px 30px 20px 30px;*/
+    /*font-size: 16px;
+    text-align: right;*/
+
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgb(219, 229, 232); /* border-top: 1px solid rgb(219, 229, 232);*/
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 10px; /*border-radius: 0 0 5px 5px;*/
+    background: rgb(225, 234, 235);
+    background: -moz-repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+    background: -webkit-repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+    background: -o-repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+    background: repeating-linear-gradient(-45deg, rgb(247, 247, 247), rgb(247, 247, 247) 15px, rgb(225, 234, 235) 15px, rgb(225, 234, 235) 30px, rgb(247, 247, 247) 30px );
+}
+#wrapper p.change_link a {
+    display: inline-block;
+    font-weight: bold;
+    background: rgb(247, 248, 241);
+    padding: 2px 6px;
+    color: rgb(29, 162, 193);
+    margin-left: 10px;
+    text-decoration: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid rgb(203, 213, 214);
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+   /* -ms-transition: all 0.4s linear;*/
+    transition: all 0.4s linear;
+}
+
+#wrapper p.change_link a:hover {
+        color: rgb(57, 191, 215);
+        background: rgb(247, 247, 247);
+        border: 1px solid rgb(74, 179, 198);
+}
+
+#wrapper p.change_link a:active {
+        position: relative;
+        top: 1px;
+}
+
+/*-------------------------------------------------------------------------------*/
+/* Form Style */
+.RegisterWrapper {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    -moz-box-shadow: 1px 1px 7px #ccc;
+    -webkit-box-shadow: 1px 1px 7px #ccc;
+    box-shadow: 1px 1px 7px #ccc;
+    width: 350px;
+    height: 400px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.LoginWrapper {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    -moz-box-shadow: 1px 1px 7px #ccc;
+    -webkit-box-shadow: 1px 1px 7px #ccc;
+    box-shadow: 1px 1px 7px #ccc;
+    width: 350px;
+    height: 400px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.form_wrapper {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    -moz-box-shadow: 1px 1px 7px #ccc;
+    -webkit-box-shadow: 1px 1px 7px #ccc;
+    box-shadow: 1px 1px 7px #ccc;
+    width: 550px;  height: 490px;   
+    padding: 10px;
+    border-radius: 10px;
+}
+.SmallWrapper {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    -moz-box-shadow: 1px 1px 7px #ccc;
+    -webkit-box-shadow: 1px 1px 7px #ccc;
+    box-shadow: 1px 1px 7px #ccc;
+    width: 350px;
+    height: 272px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.form_wrapper h3 {
+   padding: 20px 30px 20px 30px;
+   background-color: #444;
+   color: #fff;
+   font-size: 25px;
+   border-bottom: 1px solid #ddd;
+ }
+
+/*
+    Create a Fixed Footer
+    -https://www.w3schools.com/howto/howto_css_fixed_footer.asp
+*/
+.FixFooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+
+    padding:10px;
+    height:50px;
+}
+
+/*Cross Browser Examples for shapes
+    -https://www.css3.info/preview/rounded-border/
+    Here’s a few basic examples that should work in current versions of 
+    Firefox, Safari/Chrome, Opera and even IE9:
+
+    Rounder corners can be created independently using the four individual border-*-radius properties 
+*/
+.BottomRight50 { /*Example_A*/
+    height: 65px;
+    width: 160px;
+    -moz-border-radius-bottomright: 50px;
+    border-bottom-right-radius: 50px;
+}
+.BottomRight25 { /*Example_B*/
+    height: 65px;
+    width: 160px;
+    -moz-border-radius-bottomright: 50px 25px;
+    border-bottom-right-radius: 50px 25px;
+}
+.BottomRight25a { /*Example_C*/
+    height: 65px;
+    width: 160px;
+    -moz-border-radius-bottomright: 25px 50px;
+    border-bottom-right-radius: 25px 50px;
+}
+.TopLeftBtmRight { /*Example_D*/
+    height: 5em;
+    width: 12em;
+    -moz-border-radius: 1em 4em 1em 4em;
+    border-radius: 1em 4em 1em 4em;
+}
+.TopLeftBtmRighta { /*Example_E*/
+    height: 65px;
+    width: 160px;
+    -moz-border-radius: 25px 10px / 10px 25px;
+    border-radius: 25px 10px / 10px 25px;
+}
+.RoundCircle { /*Example_F */
+    height: 70px;
+    width: 70px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+}
+.RoundCircle:hover {
+   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+/* 
+    -https://stackoverflow.com/questions/78309634/css-box-with-slanted-and-rounded-corners
+    <div class="box">
+      Hello World!
+    </div>
+*/
+.TwistBox {
+    position: relative;
+    border: 10px;
+    height: 100px;
+    width: 200px;
+    padding: 40px 0px 10px 40px;
+    /* border-radius: 20px; */
+}
+
+.TwistBox:before {
+    border-radius: 20px;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #FFCC00;
+    clip-path: polygon(0 40px,40px 0,100% 0,100% calc(100% - 40px),calc(100% - 40px) 100%,0 100%,0 40px,10px calc(40px + 4.14px),10px calc(100% - 10px),calc(100% - 40px - 4.14px) calc(100% - 10px),calc(100% - 10px) calc(100% - 40px - 4.14px),calc(100% - 10px) 10px,calc(40px + 4.14px) 10px,10px calc(40px + 4.14px));
+}
+
+
+/*  -https://www.css3.info/preview/box-shadow/
+    Creating an inner shadow with the ‘inset’ keyword
+    An optional ‘inset’ keyword can be supplied, preceding the length and color values. If present, 
+    this keyword causes the shadow to be drawn inside the element. According to the specification:
+*/
+
+.innerShadowG { /*#Example_G */
+    -moz-box-shadow: inset -5px -5px #888;
+    -webkit-box-shadow: inset -5px -5px #888;
+    box-shadow: inset -5px -5px #888;
+}
+.innerShadowH { /*#Example_H */
+    -moz-box-shadow: inset -5px -5px 5px #888;
+    -webkit-box-shadow: inset -5px -5px 5px #888;
+    box-shadow: inset -5px -5px 5px #888;
+}
+.innerShadowI { /*#Example_I */
+    -moz-box-shadow: inset -5px -5px 0 5px #888;
+    -webkit-box-shadow: inset -5px -5px 0 5px#888;
+    box-shadow: inset -5px -5px 0 5px #888;
+}
+.innerShadowJ { /*#Example_J */
+    -moz-box-shadow: inset -5px -5px 5px 5px #888;
+    -webkit-box-shadow: inset -5px -5px 5px 5px#888;
+    box-shadow: inset -5px -5px 5px 5px #888;
+}
+.innerShadowK { /*#Example_K */
+    -moz-box-shadow: inset 0 0 5px #888;
+    -webkit-box-shadow: inset 0 0 5px#888;
+    box-shadow: inset 0 0 5px #888;
+}
+.innerShadowL { /*#Example_L */
+    -moz-box-shadow: inset 0 0 5px 5px #888;
+    -webkit-box-shadow: inset 0 0 5px 5px#888;
+    box-shadow: inset 0 0 5px 5px #888;
+}
+
+/*  -https://www.css3.info/preview/box-shadow/
+    Example M shows five shadows specified in the following order; firstly a black shadow with a spread 
+    distance of px and a blur distance of px, secondly a lime shadow offset to the top right, thirdly a 
+    red shadow offset to the bottom right with a blur distance applied, fourthly a yellow shadow offset 
+    to the bottom left, and lastly a blue shadow offset to the top left with a blur distance applied:
+*/
+.backShadowM { /* #Example_M */
+    -moz-box-shadow: 0 0 10px 5px black, 40px -30px lime, 40px 30px 50px red, -40px 30px yellow, -40px -30px 50px blue;
+    -webkit-box-shadow: 0 0 10px 5px black, 40px -30px lime, 40px 30px 50px red, -40px 30px yellow, -40px -30px 50px blue;
+    box-shadow: 0 0 10px 5px black, 40px -30px lime, 40px 30px 50px red, -40px 30px yellow, -40px -30px 50px blue;
+}
+
+/*  -https://www.css3.info/preview/box-shadow/
+    Spicing up shadows with RGBa color & border-radius
+    The box-shadow property can be further enhanced using CSS3 RGBa colors to create shadows with 
+    differing levels of opacity, as demonstrated by the examples below.
+*/
+
+.backShadowN { /* #Example_N */
+    -moz-box-shadow: 5px 5px rgb(0,0,0);
+    -webkit-box-shadow: 5px 5px rgb(0,0,0);
+    box-shadow: 5px 5px rgb(0,0,0);
+}
+.backShadowO { /* #Example_O */
+    -moz-box-shadow: 5px 5px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 5px 5px rgba(0,0,0,0.7);
+    box-shadow: 5px 5px rgba(0,0,0,0.7);
+}
+.backShadowP { /* #Example_P */
+    -moz-box-shadow: 5px 5px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px rgba(0,0,0,0.5);
+}
+    /*  Example Q shows a shadow offset to the bottom and right by 5px, 
+    with a border-radius of 5px applied to each corner:
+    -https://www.css3.info/preview/box-shadow/
+*/
+.backShadowQ { /*Example_Q */
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px black;
+    -webkit-box-shadow: 5px 5px black;
+    box-shadow: 5px 5px black;
+}
+.backShadowQ { /*Example_R */
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px black;
+    -webkit-box-shadow: 5px 5px 5px black;
+    box-shadow: 5px 5px 5px black;
+}
+.InnerShadow {
+    -moz-box-shadow: inset 0 0 5px 5px #888;
+    -webkit-box-shadow: inset 0 0 5px 5px#888;
+    box-shadow: inset 0 0 5px 5px #888;
+}
+
+/* -http://cssdemos.tupence.co.uk/box-shadow.htm
+
+*/
+.Shadow-inset {
+    padding: 30px; /*allow enough padding for the shadow not to cover the content*/
+    -moz-box-shadow: inset 0 0 25px #246476;
+    -webkit-box-shadow: inset 0 0 25px #246476;
+    box-shadow: inset 0 0 25px #246476;
+}
+.Shadow-color {
+    margin: 30px; /*at least the size of the outer shadow's blur*/
+    padding: 30px; /*at least the size of the outer shadow's blur*/
+    -webkit-box-shadow: inset 0 0 25px #7c0e7b, 0 0 20px rgba(76,63,241, .9);
+    -moz-box-shadow: inset 0 0 25px #7c0e7b, 0 0 20px rgba(76,63,241, .9);
+    box-shadow: inset 0 0 25px #7c0e7b, 0 0 20px rgba(76,63,241, .9);
+}
+.ThinShadow{
+    -moz-box-shadow: inset 0 0 5px #888;
+    -webkit-box-shadow: inset 0 0 5px#888;
+    box-shadow: inset 0 0 5px #888;
+}
+
+/*  
+    Table Row Highlighting on Hover
+    -https://www.textfixer.com/tutorials/highlight-table-row.php
+*/
+.hoverTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hoverTable td {
+        padding: 7px;
+        border: #4e95f4 1px solid;
+}
+    /* Define the default color for all the table rows */
+.hoverTable tr {
+   background: #b8d1f3;
+   background: #fff;
+}
+        /* Define the hover highlight color for the table row */
+.hoverTable tr:hover {
+   background-color: #ffff99;
+   background-color: cornsilk;
+}
+
+/*
+    Create A Filtered Table
+    -https://www.w3schools.com/howto/howto_js_filter_table.asp
+*/
+#myInput {
+    background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat;   /* Do not repeat the icon image */
+    width: 100%;                    /* Full-width */
+    font-size: 16px;                /* Increase font-size */
+    padding: 12px 20px 12px 40px;   /* Add some padding */
+    border: 1px solid #ddd;         /* Add a grey border */
+    margin-bottom: 12px;            /* Add some space below the input */
+    background-color:cornsilk;
+}
+
+#myTable {
+    border-collapse: collapse;      /* Collapse borders */
+    width: 100%;                    /* Full-width */
+    border: 1px solid #ddd;         /* Add a grey border */
+    font-size: 18px;                /* Increase font-size */
+}
+
+#myTable th, #myTable td {
+        text-align: left;           /* Left-align text */
+        padding: 12px;              /* Add padding */
+ }
+
+#myTable tr {
+        /* Add a bottom border to all table rows */
+        border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+        /* Add a grey background color to the table header and on hover */
+        /*background-color: #f1f1f1;*/
+        background-color: #e1e497;
+        background-color: cornsilk;
+ }
+
+/*   Table Filter Using JavaScript
+    -https://www.vrsofttech.com/code-editor/js/index?file_name=js-filter-table
+*/
+
+.TableContainer {
+    margin: 0 auto;
+    width: 100%;
+}
+
+#filterTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#filterTable td, #filterTable th {
+        padding: 5px;
+        border: 1px solid #ccc;
+    }
+
+#filterSearch {
+    margin-bottom: 5px;
+    padding: 5px;
+    float: right;
+}
+
+.custom-tooltip.tooltip > .tooltip-inner {
+    text-align: left;
+    max-width: 500px;
+}
+/*  
+    Scroll Back To Top Button
+    -https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+*/
+#goTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+
+    border: 1px solid #ddd; /* Gray border */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#goTopBtn:hover {
+        background-color: #35b128; /* Add a dark-grey background on hover */
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        background-image: url('../img/arrowup1.png');
+        background-repeat: no-repeat;
+        background-size: 50px 50px;
+        font-display:unset;
+}
+
+/*  Round Dots / Circles
+    -https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_circles
+*/
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+/* Add a hover effect (blue shadow) */
+dot:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+.dot1 {
+    height: 25px;
+    width: 25px;
+    background-color: cornsilk;
+    border-radius: 50%;
+    display: inline-block;
+}
+/* Add a hover effect (blue shadow) */
+dot1:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+.dotWhite {
+    height: 25px;
+    width: 25px;
+    background-color:#fff;
+    border-radius: 50%;
+    display: inline-block;
+    cursor:pointer;
+}
+/* Add a hover effect (blue shadow) */
+dotWhite:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    border: 5px solid green;
+}
+
+/*
+    <div class="vlLeft"></div>
+    -https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_vertical_line
+*/
+.vlLeft {
+    border-left: 6px solid green;
+    height: 500px;
+}
+.vlCenter {
+    border-left: 6px solid green;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}
+
+/*
+    <hr class="rounded">
+    -https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dividers
+*/
+/* Rounded border */
+hr.rounded {
+   border-top: 8px solid #c6f2ab;
+   border-radius: 5px;
+}
+/* Solid border */
+hr.solid {
+   border-top: 3px solid #bbb;
+}
+hr.solidGrn{
+    border:10px solid green;
+    border-radius:5px;
+}
+
+/*  Text Divider
+    <div class="divider">Lorem Ipsum</div>
+    -https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_text_divider
+*/
+.divider {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.divider::before, .divider::after {
+  flex: 1;
+  content: '';
+  padding: 3px;
+  background-color: red;
+  margin: 5px;
+}
+
+/*  Webkit CSS to control the box around the color in an input[type=color]?
+    -https://stackoverflow.com/questions/11167281/webkit-css-to-control-the-box-around-the-color-in-an-inputtype-color
+*/
+input[type='color'] {
+    padding: 0;
+    width: 150%;
+    height: 150%;
+    margin: -25%;
+}
+
+.cp_wrapper {
+    overflow: hidden;
+    width: 22px;  height: 22px;     /*width: 2em;   height: 2em;*/
+
+    /* optional formatting below here */
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px 0px grey;
+    margin: 10px;  /* margin: 1em;*/
+}
+
+/*
+    What does background-color: transparent mean?
+    -https://stackoverflow.com/questions/51979083/what-does-background-color-transparent-mean
+*/
+.bg-blue {
+    background-color: aqua;
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.bg-yellow {
+    background-color: yellow;
+}
+/*
+  <p class="example">Resize the browser window to see how the background color of this paragraph changes on different screen sizes.</p>
+  -https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_mq_breakpoints
+*/
+
+.myBorder {
+    padding: 20px;
+    color: white;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .myBorder {
+        background: red;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .myBorder {
+        background: green;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .myBorder {
+        background: blue;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .myBorder {
+        background: orange;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .myBorder {
+        background: pink;
+    }
+}
+
+/* Cross Browser Examples
+   create rounded corners with CSS
+   -https://www.css3.info/preview/rounded-border/
+*/
+.brdrBtn_D {
+    height: 5em;
+    width: 12em;
+    -moz-border-radius: 1em 4em 1em 4em;
+    border-radius: 1em 4em 1em 4em;
+
+}
+.brdrBtn_D1 {
+    /*height: 5em; width: 12em;*/
+    height:60px;
+    width: 100%;
+    -moz-border-radius: 1em 4em 1em 4em;
+    border-radius: 1em 4em 1em 4em;
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    border: 5px solid green;
+}
+
+.brdrBtn_E {
+    /*height: 65px;  width: 160px;*/
+    height: 60px;  width: 100%;
+    -moz-border-radius: 25px 10px / 10px 25px;
+    border-radius: 25px 10px / 10px 25px;
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+
+    border: 2px solid green;
+    background: #f4f4f4 url(../img/bg.gif) repeat top left;
+}
+.brdrBtn_E1 {
+    height:auto; width:auto;
+    /*height: 50%;  width: 100%;*/
+    /* height: 65px; width: 160px;*/
+    -moz-border-radius: 25px 10px / 10px 25px;
+    border-radius: 25px 10px / 10px 25px;
+}
+.brdrBtn_E1:hover {
+        box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        /*border: 5px solid green;*/
+}
+/*
+    Image Round 50%
+    <img src="img_avatar.png" alt="Avatar" style="width:200px">
+    -https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_rounded_images
+*/
+.imgRound {
+    border-radius: 50%;
+}
+.imgRound:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  /*border: 5px solid green;*/
+}
+
+/*<img src="img_avatar.png" alt="Avatar" class="avatar">*/
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+/*
+
+*/
+.BtnRightShadow {
+    -webkit-box-shadow: 3px 3px 4px #363636;
+    -moz-box-shadow: 3px 3px 4px #363636;
+    box-shadow: 3px 3px 4px #363636;
+    border-radius: 10px;
+}
+.AllSidesShadow {
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0, .65);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0, .65);
+    box-shadow: 0 0 10px rgba(0,0,0, .65);
+    border-radius:10px;
+    padding-bottom:14px;
+}
+.AllSidesShadowFtr {
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0, .65);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0, .65);
+    box-shadow: 0 0 10px rgba(0,0,0, .65);
+    border-radius: 10px;
+    height: 50px;
+}
+
+labelD {
+    position: relative;
+    display: inline-block;
+}
+/*============================================================================*/
+selectD {
+    display: inline-block;
+    padding: 4px 3px 5px 5px;
+    width: 150px;
+    outline: none;
+    color: blue;
+    border: 1px solid #C8BFC4;
+    border-radius: 4px;
+    box-shadow: inset 1px 1px 2px #ddd8dc;
+    background-color: #fff;
+}
+/* Select arrow styling */
+.notIE labelD:after {
+    content: '';
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    display: inline-block;
+    top: 4px;
+    right: 4px;
+    background: url(http://www.jewellerynetasia.com/portals/0/Images/social-network-service/google-plus.png) no-repeat right center white;
+    pointer-events: none;
+}
+/*============================================================================*/
+
+
+/*
+   
+*/
+    /*.Ttooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.Ttooltip .Ttooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -60px;
+}
+
+    .Ttooltip .Ttooltiptext::after {
+        content: "";
+        position: absolute;
+        top: -50%;*/ /*top: 100%;*/
+    /*left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+    }
+
+.Ttooltip:hover .Ttooltiptext {
+        visibility: visible;
+}*/

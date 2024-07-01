@@ -1,0 +1,278 @@
+﻿
+@model IEnumerable<People.Models.MdlPeopleApp>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-top: 100px;"></div>
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+   
+    <span class="tt" data-placement="top" title="Manage account">
+        <a id="manage" type="button" class="btn btn-outline-primary btn-sm" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a>
+    </span>
+
+    <span class="tt" data-placement="top" title="Add new client">
+        <a type="button" class="btn btn-outline-primary btn-sm" asp-action="Create">Add New</a>
+    </span>
+
+    <span class="tt" data-placement="top" title="Go home!">
+      <button type="button" class="btn btn-outline-primary btn-sm" onclick="javascript:GoToHomePage()">Cancel </button>
+    </span>
+</div>
+
+<div class="mb-3 mt-3" style="background: #fff;
+              border: 1px solid #ddd;
+              margin: 0 auto;
+              margin-left: auto;
+              margin-right: auto;
+              font-size: 16px;
+              -moz-box-shadow: 1px 1px 7px #ccc;
+              -webkit-box-shadow: 1px 1px 7px #ccc;
+              box-shadow: 1px 1px 7px #ccc;
+              width: 100%;  height:auto;
+              padding: 10px;
+              border-radius: 10px;">
+
+  <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+
+            <th>
+               @Html.DisplayNameFor(model => model.Avatar)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.AddressLine)
+            </th>
+
+            <!--
+            <th>
+                @Html.DisplayNameFor(model => model.StNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StZip)
+            </th>
+            
+          
+            
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Race)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dated)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.UserIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            -->
+            <th>Actions</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+
+            <td>
+              <a class="nav-link text-dark" asp-area="" asp-controller="ImageGallery" asp-action="Index">Image</a>
+             
+             <!--
+                      
+              <a asp-action="Edit" asp-route-id="@item.Id"
+                 data-bs-toggle="modal" data-bs-target="#ModalEdit"
+                 data-bs-whatever="">Avatar
+                 @* @Html.DisplayFor(modelItem => item.Avatar) *@
+              </a>
+              -->
+              @* @Html.DisplayFor(modelItem => item.Avatar) *@
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.AddressLine)
+            </td>
+
+            <!--
+            <td>
+                @Html.DisplayFor(modelItem => item.StNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StZip)
+            </td>
+            -->
+                     
+
+            <!--
+            <td>
+                @Html.DisplayFor(modelItem => item.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Race)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dated)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.UserIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+                -->
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                      
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+  </table>
+</div>
+
+
+
+People.Models.ImageClass;
+<div class="modal fade" id="ModalEdit" tabindex="-1" aria-labelledby="ModalEditLabel" aria-hidden="true">
+  
+  <div class="modal-dialog">
+     <div class="modal-content">
+
+         <div class="modal-header" style="background-color:#eae9d4;">
+            <h5 class="modal-title" id="ModalEditLabel">New message</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+
+         <div class="modal-body text-center">
+             <div class="row">
+                 <div class="col mb-3">
+                       <img src="~/Images/your-photo-here.png" class="brdrBtn_E1 mt-2"/>
+                        @* <img src="~/Images/@imgFileName" height="100" width="100" Download /> *@
+
+                        <a href="ImageGallery/DownloadImage?imgName=your-photo-here.png"
+                           data-bs-dismiss="modal" style="text-decoration:none;">Download</a> |
+
+                        <a href="ImageGallery/DeleteImage?imgName=your-photo-here.png"
+                            style="text-decoration:none;"> Delete</a>
+                 </div>
+                   @*  <a href="ImageGallery/DownloadImage?imgName=your-photo-here.png"
+                       type="button" class="btn btn-info" data-bs-dismiss="modal"
+                       style="text-decoration:none;">Download</a> |
+
+                    <a href="ImageGallery/DeleteImage?imgName=your-photo-here.png"
+                       type="button" class="btn btn-danger" style="text-decoration:none;"> Delete</a> *@
+              </div>
+
+           <from method="post" enctype="multipart/form-data" asp-controller="Img" asp-action="Index">
+            <div class="change_linkA mt-4 mb-4">
+             <div class="row">
+                <div class="col">
+                   <input type="file" name="imgfile" class="m-xl-2"/>
+                </div>
+                
+                <div class="col">
+                   <input type="submit" value="Upload" class="m-xl-2"/>
+                </div>
+             </div>
+            </div>
+           </from>
+         </div>
+     </div>
+
+        <div class="modal-footer">
+
+           
+
+            @*  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send message</button> *@
+        </div>
+
+                    @* <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form> *@
+
+  </div>
+
+        
+</div>
+ @*   </div>
+  
+</div> *@
